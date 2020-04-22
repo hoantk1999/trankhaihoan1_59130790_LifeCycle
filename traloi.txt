@@ -1,0 +1,5 @@
+4. Cho biết các phương thức vòng đời được gọi khi ứng dụng đang chạy và người sử dụng bấm vào nút back sau đó mở lại ứng dụng: onPause- onStop onDestroy
+5. Cho biết các phương thức vòng đời được gọi khi ứng dụng đang chạy và người sử dụng bấm vào nút home và sau đó mở lại ứng dụng: onPause-OnStop-onRestart-onStart-onResume
+6. Nếu cần lưu thông tin của ứng dụng để khôi phục lại trạng thái hiển thị của ứng dụng khi chạy lại ứng dụng thì cần phải thực hiện trong phương thức vòng đời nào? vì sao? 
+Ta dùng onSaveInstanceState 
+trước khi gọi onPause(), onStop() và onDestroy() , Activity trong trạng thái  pause này có thể bị hệ thống kill.  Cần đảm bảo tất cả trạng thái của activity được lưu trước khi phương thức này trả về (return) Sử dụng phương thức onSaveInstanceState (Bundle outState) để lưu trữ trạng thái của Activity bằng dữ liệu lưu trữ toàn cục (File, Content Provider...)
